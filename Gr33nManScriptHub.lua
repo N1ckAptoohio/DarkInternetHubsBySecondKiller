@@ -2,13 +2,13 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 
 local Window = Rayfield:CreateWindow({
-    Name = "Dark Internet hub",
-    LoadingTitle = "Gr33n man teem",
+    Name = "[👻] Dark Internet hub",
+    LoadingTitle = "Dark internet team",
     LoadingSubtitle = "By ! SecondKiller#6666",
     ConfigurationSaving = {
-       Enabled = true,
+       Enabled = true,  
        FolderName = nil, 
-       FileName = "By dark team"
+       FileName = ""
     },
     Discord = {
        Enabled = true,
@@ -31,8 +31,8 @@ local Window = Rayfield:CreateWindow({
     Title = "Welcome Back buddy!🍕",
     Content = "Made by ! SecondKiller#6666",
     Duration = 6.5,
-    Image = 4483362458,
-    Actions = { -- Notification Buttons
+    Image = 13267248587,
+    Actions = { 
        Ignore = {
           Name = "Alright!",
           Callback = function()
@@ -42,8 +42,34 @@ local Window = Rayfield:CreateWindow({
  },
  })
 
+ local Tab = Window:CreateTab("Home", 13267234697) 
 
- local Tab = Window:CreateTab("Player", 4483362458) -- Title, Image
+ local Section = Tab:CreateSection("[🤔] I don't know")
+
+ local Button = Tab:CreateButton({
+   Name = "[✨] Discord link",
+   Callback = function()
+      Rayfield:Notify({
+         Title = "Dark internet Discord server 👻",
+         Content = "https://discord.gg/EQ2sYfPz",
+         Duration = 6.5,
+         Image = 13267455867,
+         Actions = { -- Notification Buttons
+            Ignore = {
+               Name = "Ok!",
+               Callback = function()
+               print("The user tapped Okay!")
+            end
+         },
+      },
+      })
+   end,
+})
+
+
+ 
+
+ local Tab = Window:CreateTab("Player", 13267230543) 
  local Section = Tab:CreateSection("[👩‍💻] Movement")
 
  local Slider = Tab:CreateSlider({
@@ -58,21 +84,52 @@ local Window = Rayfield:CreateWindow({
     end,
  })
 
+ local Slider = Tab:CreateSlider({
+   Name = "JumpAmount",
+   Range = {50, 5000},
+   Increment = 50,
+   Suffix = "JumpAmount", 
+   CurrentValue = 50,
+   Flag = "JP", 
+   Callback = function(Value)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+   end,
+})
+
+ local Section = Tab:CreateSection("[👩‍💻] Others")
+
+ local Toggle = Tab:CreateToggle({
+   Name = "[😪] Anti Afk",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      wait(0.5)local ba=Instance.new("ScreenGui")
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti AFK Script"ca.TextColor3=Color3.new(0,1,1)
+ca.TextSize=22;da.Parent=ca
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+da.Size=UDim2.new(0,370,0,107)_b.Parent=da
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+_b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="made by ! SecondKiller#6666 "
+_b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
+ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
+ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status : Active"end)
+   end,
+})
+
 Rayfield:LoadConfiguration()
 
-local Slider = Tab:CreateSlider({
-    Name = "JumpAmount",
-    Range = {50, 5000},
-    Increment = 50,
-    Suffix = "JumpAmount", 
-    CurrentValue = 50,
-    Flag = "JP", 
-    Callback = function(Value)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-    end,
- })
 
- local Tab = Window:CreateTab("Hubs", 4483362458) -- Title, Image
+
+ local Tab = Window:CreateTab("Hubs", 13267227645) -- Title, Image
 
  
  local Section = Tab:CreateSection("[👩‍💻] Hubs")
@@ -98,7 +155,7 @@ local Button = Tab:CreateButton({
    end,    
 })
 
-local Tab = Window:CreateTab("Scripts", 4483362458) 
+local Tab = Window:CreateTab("Scripts", 13267358485) 
 
 local Section = Tab:CreateSection("[👩‍💻] Admins")
 
@@ -133,7 +190,7 @@ local Button = Tab:CreateButton({
          Title = "Hey you wait!",
          Content = "If the script doesn't makes you tall then set body type to 100% and go to scales and set everything to 100% 😊",
          Duration = 6.5,
-         Image = 4483362458,
+         Image = 13267454045,
          Actions = { -- Notification Buttons
             Ignore = {
                Name = "Okay i got it!",
