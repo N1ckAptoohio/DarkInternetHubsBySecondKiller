@@ -173,6 +173,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
+
 local Section = Tab:CreateSection("[👩‍💻] Scripts")
 
 local Button = Tab:CreateButton({
@@ -255,6 +256,60 @@ Humanoid:FindFirstChild("HeadScale"):Destroy()
 wait(1)
    end,
 })
+
+
+
+
+
+
+
+
+
+
+--//Secret scripts\\--
+local Section = Tab:CreateSection("[👻] OP SCRIPTS")
+
+local Button = Tab:CreateButton({
+   Name = "[👻] Secret | Op scripts",
+   Callback = function()
+      local Window = Rayfield:CreateWindow({
+         Name = "[🥶] OP SCRIPTS",
+         LoadingTitle = "SECRET",
+         LoadingSubtitle = "by SecondKiller",
+         ConfigurationSaving = {
+            Enabled = true,
+            FolderName = nil, -- Create a custom folder for your hub/game
+            FileName = "Big Hub"
+         },
+         Discord = {
+            Enabled = false,
+            Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+            RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+         },
+         KeySystem = true, -- Set this to true to use our key system
+         KeySettings = {
+            Title = "[🥶] Secret scripts",
+            Subtitle = "Key System",
+            Note = "To get the key you have to talk with the owner to give you the key!",
+            FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+            SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+            GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+            Key = {"345g345y34u3g534uy345gsdf"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+         }
+      })
+      local Tab = Window:CreateTab("[🥶] Scripts", 13267358485) -- Title, Image
+
+      local Button = Tab:CreateButton({
+         Name = "[👻] All games | V2 Admin",
+         Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/BloodyBurns/Hex/main/Iv%20Admin%20v3.lua'))()
+         end,
+      })
+   end,
+})
+
+
+
 
 
 Rayfield:LoadConfiguration()
